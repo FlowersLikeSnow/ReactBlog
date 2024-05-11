@@ -1,0 +1,90 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+html .bodyShow,
+body .bodyShow,
+#root .bodyShow {
+  height: calc(100% - 40px);
+}
+html div,
+body div,
+#root div,
+html p,
+body p,
+#root p,
+html span,
+body span,
+#root span,
+html table,
+body table,
+#root table,
+html ul,
+body ul,
+#root ul,
+html li,
+body li,
+#root li,
+html a,
+body a,
+#root a,
+html h1,
+body h1,
+#root h1,
+html h2,
+body h2,
+#root h2,
+html h3,
+body h3,
+#root h3 {
+  user-select: none;
+}
+.active-scale-95:active {
+  transform: scale(0.95);
+  transition: all 0.25;
+}
+/* 全局滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/* 滚动条轨道样式 */
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* 滚动条背景颜色 */
+}
+/* 滚动条手柄样式 */
+::-webkit-scrollbar-thumb {
+  background-color: #e8eaec;
+  /* 滚动条颜色 */
+  border-radius: 5px;
+  /* 滚动条圆角 */
+  border: 3px solid transparent;
+  /* 滚动条边框 */
+}
+.hover__show .hover__inline-flex {
+  display: none;
+}
+.hover__show:hover .hover__inline-flex {
+  display: inline-flex;
+}
+.hover__show .hover__inline-block {
+  display: none;
+}
+.hover__show:hover .hover__inline-block {
+  display: inline-block;
+}
+.hover__show .hover__block {
+  display: none;
+}
+.hover__show:hover .hover__block {
+  display: block;
+}
+.active-scale-95 {
+  transition: all 0.25s;
+}
+.active-scale-95:active {
+  transform: scale(0.95);
+}

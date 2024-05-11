@@ -1,0 +1,34 @@
+.layout-page .avatar {
+  position: absolute;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.layout-page .avatar:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+@media screen and (max-width: 450px) {
+  .layout-page .ant-layout-sider {
+    flex: 0 0 140px !important;
+    min-width: 140px !important;
+    width: 140px !important;
+  }
+  .layout-page .ant-layout-sider .ant-layout-sider-trigger {
+    width: 140px !important;
+  }
+  .layout-page .ant-layout-sider.collapsibled {
+    flex: 0 0 0 !important;
+    min-width: 0 !important;
+    width: 0 !important;
+  }
+  .layout-page .ant-layout-sider.collapsibled .ant-layout-sider-children {
+    overflow: hidden;
+  }
+  .layout-page .ant-layout-sider.collapsibled .ant-layout-sider-trigger {
+    width: 60px !important;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.25);
+  }
+}

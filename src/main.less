@@ -1,0 +1,76 @@
+html,
+body,
+#root {
+	width: 100%;
+	height: 100%;
+	// font-family: Noto Sans Mono CJK SC Regular !important;
+	.bodyShow {
+		height: calc(100% - 40px);
+	}
+
+	div,
+	p,
+	span,
+	table,
+	ul,
+	li,
+	a,
+	h1,
+	h2,
+	h3 {
+		// font-family: Noto Sans Mono CJK SC Regular !important;
+		user-select: none;
+	}
+}
+.active-scale-95 {
+	&:active {
+		transform: scale(0.95);
+		transition: all 0.25;
+	}
+}
+/* 全局滚动条样式 */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+/* 滚动条轨道样式 */
+::-webkit-scrollbar-track {
+	background: transparent; /* 滚动条背景颜色 */
+}
+
+/* 滚动条手柄样式 */
+::-webkit-scrollbar-thumb {
+	background-color: #e8eaec; /* 滚动条颜色 */
+	border-radius: 5px; /* 滚动条圆角 */
+	border: 3px solid transparent; /* 滚动条边框 */
+}
+
+.hover__show {
+	.hover__inline-flex {
+		display: none;
+	}
+
+	&:hover .hover__inline-flex {
+		display: inline-flex;
+	}
+	.hover__inline-block {
+		display: none;
+	}
+
+	&:hover .hover__inline-block {
+		display: inline-block;
+	}
+	.hover__block {
+		display: none;
+	}
+
+	&:hover .hover__block {
+		display: block;
+	}
+}
+.active-scale-95 {
+	transition: all 0.25s;
+	&:active {
+		transform: scale(0.95);
+	}
+}

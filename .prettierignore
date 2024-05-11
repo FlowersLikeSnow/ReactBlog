@@ -1,0 +1,15 @@
+.eslintrc.cjs
+index.html
+package-lock.json
+package.json
+public
+/dist-electron/*
+/dist/*
+.local
+.output.js
+/node_modules/**
+
+**/*.svg
+**/*.sh
+
+/public/*

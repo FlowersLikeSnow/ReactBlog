@@ -1,0 +1,64 @@
+.bottom-nav-component {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+
+	
+    position: absolute;    
+	z-index: 1;
+    padding: 0 5%;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+
+    p {
+        float: right;
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(88, 87, 87);
+        cursor: pointer;
+        margin-left: 5px;
+
+        &:hover,
+        &:active {
+            color: #2396ef;
+        }
+    }
+
+	&::after,
+	&,
+	&::before {
+		box-sizing: border-box;
+	}
+	.music {
+		width: 25px;
+		height: 25px;
+		cursor: pointer;
+		background: url('http://img.lijundong.cn/Project/Blog/musicIcon.svg') no-repeat center/cover;
+		display: none;
+	}
+	
+	audio {
+		opacity: 0;
+	}
+	
+	.rotate {
+		animation: rotate 5s linear infinite;
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotate(0deg);
+		}
+	
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}

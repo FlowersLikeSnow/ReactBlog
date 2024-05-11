@@ -1,0 +1,24 @@
+.style-editor-component {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+.style-editor-component::after,
+.style-editor-component,
+.style-editor-component::before {
+  box-sizing: border-box;
+}
+.style-editor-component .styleEditor {
+  overflow: auto;
+  padding: 0.5em;
+  margin: 0.5em;
+  outline: none;
+  white-space: pre-wrap;
+  font-size: 14px;
+}
+.style-editor-component .styleEditor:focus {
+  box-shadow: 0 0 30px #fff;
+}
