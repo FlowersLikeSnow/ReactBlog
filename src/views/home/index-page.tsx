@@ -25,6 +25,7 @@ const HomePage: FC = () => {
 	const timer = useRef<any[]>([]);
 	const interVal = useRef<number>(50);
 	const currentMarkdown = useRef<string>('');
+	const [, forceUpdate] = useState<string>('');
 	const [isMobile, setIsMobile] = useState<boolean>(
 		!!navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i) || window.innerWidth < 666
 	);
@@ -113,6 +114,7 @@ const HomePage: FC = () => {
 				if (__currentMarkdown.length < len) {
 					__currentMarkdown = me.substring(0, __currentMarkdown.length + 1);
 					currentMarkdown.current = __currentMarkdown;
+					forceUpdate(()=>__currentMarkdown)
 					const lastChar = __currentMarkdown[__currentMarkdown.length - 2];
 					resumeEditorRef.current?.goBottom();
 					if (lastChar === "\n") {
@@ -128,6 +130,7 @@ const HomePage: FC = () => {
 			showResume();
 		});
 	};
+	
 	const writeShowHTML = () => {
 		return new Promise((resolve: (str?: AnyObject) => void) => {
 			setEnableHtml(true);

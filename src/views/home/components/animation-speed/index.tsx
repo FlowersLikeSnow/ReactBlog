@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./index.less";
-import { Input, Popconfirm } from "antd";
+import { InputNumber, Popconfirm } from "antd";
 import { CaretDownOutlined } from "@ant-design/icons";
 
 export const ResumeEditor = (props: {
@@ -17,13 +17,14 @@ export const ResumeEditor = (props: {
 			<Popconfirm
 				title="修改写字速度"
 				description={
-					<Input
-						type="text"
+					<InputNumber
+						className="w-[200px]"
 						style={{textAlign: "center"}}
 						value={value}
-						onChange={(e) => setValue(Number(e.target.value))}
+						max={100}
+						min={1}
+						onChange={(e) => setValue(e||0)}
 						placeholder="请输入1到100的整数"
-						v-number
 					/>
 				}
 				okText="确定"
