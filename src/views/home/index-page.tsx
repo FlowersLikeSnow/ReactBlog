@@ -17,8 +17,8 @@ const HomePage: FC = () => {
 	const styleEditorRef = useRef<StyleEditorRef>(null);
 	const resumeEditorRef = useRef<ResumeEditorRef>(null);
 	const bottomNavRef = useRef<BottomNavRef>(null);
+	const currentPageRef = useRef<HTMLDivElement>(null);
 	const [enableHtml, setEnableHtml] = useState<boolean>(false);
-	// const [fullStyle, setFullStyle] = useState<string[]>(defaultStyle);
 	const [fullMarkdown] = useState<string>(me);
 	const styleCode = useRef<string>("");
 	const timer = useRef<Array<NodeJS.Timeout>>([]);
@@ -43,7 +43,9 @@ const HomePage: FC = () => {
 		makeResume();
 	};
 	const mobileGoBottom = (value: number) => {
-		document.body.scrollTop = document.documentElement.scrollTop = value;
+		if (currentPageRef.current) {
+			currentPageRef.current.scrollTop = value;
+		}
 	};
 	const getCurrentScrollTop = (bool: boolean) => {
 		const resumeRect = resumeEditorRef.current?.containerRef?.getBoundingClientRect() || {
@@ -169,13 +171,11 @@ const HomePage: FC = () => {
 		}
 	};
 
-	useEffect(() => {
-		loadMobileStyle();
-	}, []);
+	useEffect(loadMobileStyle, []);
 	window.addEventListener("resize", debounce(loadMobileStyle, 100), false);
 
 	return (
-		<div className="h-full w-full overflow-y-auto current-page">
+		<div className="h-full w-full overflow-y-auto current-page" ref={currentPageRef}>
 			<AnimationSpeed updateSpeed={(value) => (interVal.current = value)} speed={interVal.current} />
 			<div className="main">
 				<StyleEditor
