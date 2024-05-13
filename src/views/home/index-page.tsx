@@ -21,10 +21,10 @@ const HomePage: FC = () => {
 	const [fullStyle, setFullStyle] = useState<string[]>(defaultStyle);
 	const [fullMarkdown] = useState<string>(me);
 	const [styleCode, setStyleCode] = useState<string>("");
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const timer = useRef<any[]>([]);
+	const timer = useRef<Array<NodeJS.Timeout>>([]);
 	const interVal = useRef<number>(50);
 	const currentMarkdown = useRef<string>('');
+	// TODO: 用于render重渲染
 	const [, forceUpdate] = useState<string>('');
 	const [isMobile, setIsMobile] = useState<boolean>(
 		!!navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i) || window.innerWidth < 666
@@ -49,6 +49,10 @@ const HomePage: FC = () => {
 		updateMainStyle();
 	};
 	const loadMobileStyle = () => {
+		if (timer.current.length) {
+			timer.current.forEach((t) => clearTimeout(t));
+			timer.current = [];
+		}
 		setIsMobile(window.innerWidth < 666);
 		setMobileOrWeb();
 		setStyleCode("");
