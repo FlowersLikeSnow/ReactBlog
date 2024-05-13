@@ -31,7 +31,7 @@ const fullStyle:string [] = [`/*
 * 将这些代码都装在这里面
 */
 .styleEditor{
-	width:45%;
+	width:calc(50% - .5em);
 	height:77vh;
 	background:#032331;
 	border:1px solid #f2f2f2;
@@ -61,10 +61,9 @@ const fullStyle:string [] = [`/*
 */
 .styleEditor{
 	position:absolute;
-	right:7%;
+	right:0;
 	top:0;
 	transition:none;
-	transform:rotateY(-10deg) translateZ(100px);
 }
 /*
 * 我把滚动条的样式也设置一下.
@@ -83,7 +82,7 @@ const fullStyle:string [] = [`/*
 	position:absolute;
 	left:0;
 	top:0;
-	width:45%;
+	width:calc(50% - .5em);
 	height:93vh;
 	background-color:#032331;
 	transform:rotateY(10deg) translateZ(-100px);

@@ -12,7 +12,6 @@ import {
 import { FC, useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 const layoutStyle = {
-	borderRadius: 8,
 	overflow: "hidden",
 	width: "100%",
 	maxWidth: "100%"
