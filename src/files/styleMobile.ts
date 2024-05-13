@@ -31,7 +31,7 @@ const fullMobileStyle:string [] = [`/*
 * 将这些代码都装在这里面
 */
 .styleEditor{
-	width:100%;
+	width: calc(100% - 1em);
 	height:50%;
 	min-height:35vh;
 	background:#032331;
@@ -78,10 +78,11 @@ const fullMobileStyle:string [] = [`/*
 * 好吧,接下来,我就再写一个编辑器.
 */
 .resumeEditor{
-	width:100%;
+	width: calc(100% - 1em);
 	height:50%;
 	min-height:35vh;
 	background-color:#032331;
+	margin-bottom:10px;
 }
 /*
 * 编辑器写好了,开始往里面写内容,我开始介绍我自己了......

@@ -52,3 +52,12 @@
     transform: rotate(360deg);
   }
 }
+@media only screen and (max-width: 666px) {
+  .bottom-nav-component {
+    bottom: unset;
+    top: 10px;
+  }
+  .bottom-nav-component a {
+    color: #fff;
+  }
+}

@@ -43,7 +43,7 @@ const items: MenuItem[] = [
 	}
 ];
 const LayoutPage: FC = () => {
-	const [collapsed, setCollapsed] = useState(false);
+	const [collapsed, setCollapsed] = useState(true);
 	const nav = useNavigate();
 	useEffect(() => {
 		nav(`${items[0]?.key}`);

@@ -31,6 +31,9 @@ const projectUrls = [
 	// 	url: "https://juejin.im/user/5bcfd79de51d45473245dc1c"
 	// }
 ];
+/**
+ * 按钮控制器组件
+ */
 export const BottomNav = forwardRef<
 	BottomNavRef,
 	{

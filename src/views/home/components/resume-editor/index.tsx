@@ -2,7 +2,9 @@ import { forwardRef, useImperativeHandle, useMemo, useRef } from "react";
 import { ResumeEditorRef } from "../../type";
 import "./index.less";
 import { marked } from "marked";
-
+/**
+ * 简历组件
+ */
 export const ResumeEditor = forwardRef<
 	ResumeEditorRef,
 	{

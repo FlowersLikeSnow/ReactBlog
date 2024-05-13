@@ -3,7 +3,9 @@ import Prism from "prismjs";
 import { StyleEditorRef } from "../../type";
 import './index.less'
 import { AnyObject } from "antd/es/_util/type";
-
+/**
+ * 样式组件
+ */
 export const StyleEditor = forwardRef<
 	StyleEditorRef,
 	{

@@ -2,13 +2,16 @@ import { useState } from "react";
 import "./index.less";
 import { InputNumber, Popconfirm } from "antd";
 import { CaretDownOutlined } from "@ant-design/icons";
-
+/**
+ * 动画速度组件
+ * @param props 
+ * @returns 
+ */
 export const ResumeEditor = (props: {
 	speed: number;
 	updateSpeed: (speed: number) => void;
-	showHeader: (value: boolean) => void;
 }) => {
-	const { updateSpeed, showHeader, speed } = props;
+	const { updateSpeed, speed } = props;
 	const [isDown, setIsDown] = useState<boolean>(false);
 	const [value, setValue] = useState<number>(speed || 0);
 
@@ -34,10 +37,7 @@ export const ResumeEditor = (props: {
 			>
 				<div
 					className="down"
-					onClick={() => {
-						setIsDown(!isDown);
-						showHeader(!isDown);
-					}}
+					onClick={() => setIsDown(!isDown)}
 				>
 					<CaretDownOutlined style={{ color: "#2396ef", fontSize: "30px" }} />
 				</div>
