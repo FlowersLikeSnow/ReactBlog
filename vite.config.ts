@@ -5,7 +5,7 @@ import { resolve } from "path"
 const VITE_WEB_PORT = '1314';
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/react-blog/",
+  base: "/ReactBlog/blob/master/docs/",
   plugins: [
     WindiCSS(),
     react(),
@@ -34,9 +34,9 @@ export default defineConfig({
     minify: "esbuild",
     rollupOptions: {
       output: {
-        // chunkFileNames: 'static/js/[name]-[hash].js',
-        // entryFileNames: 'static/js/[name]-[hash].js',
-        // assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+        chunkFileNames: 'static/js/[name]-[hash].js',
+        entryFileNames: 'static/js/[name]-[hash].js',
+        assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
         experimentalMinChunkSize: 256,
         manualChunks(id) {
           // console.log(id)
