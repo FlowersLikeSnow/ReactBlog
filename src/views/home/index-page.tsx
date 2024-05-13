@@ -22,9 +22,9 @@ const HomePage: FC = () => {
 	const [fullMarkdown] = useState<string>(me);
 	const [styleCode, setStyleCode] = useState<string>("");
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const [timer, setTimer] = useState<any[]>([]);
-	const [interVal, setInterVal] = useState<number>(50);
-	const [currentMarkdown, setCurrentMarkdown] = useState<string>("");
+	const timer = useRef<any[]>([]);
+	const interVal = useRef<number>(50);
+	const currentMarkdown = useRef<string>('');
 	const [isMobile, setIsMobile] = useState<boolean>(
 		!!navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i) || window.innerWidth < 666
 	);
@@ -51,7 +51,7 @@ const HomePage: FC = () => {
 		setIsMobile(window.innerWidth < 666);
 		setMobileOrWeb();
 		setStyleCode("");
-		setCurrentMarkdown("");
+		currentMarkdown.current ='';
 		setEnableHtml(false);
 		makeResume();
 	};
@@ -95,7 +95,7 @@ const HomePage: FC = () => {
 							}
 						}
 					}
-					setTimer([...timer, setTimeout(showStyle, interVal)]);
+					timer.current.push(setTimeout(showStyle, interVal.current));
 				} else {
 					setStyleCode(() => __styleCode);
 					resolve(__styleCode);
@@ -108,11 +108,11 @@ const HomePage: FC = () => {
 	const writeResume = () => {
 		return new Promise((resolve: (str?: AnyObject) => void) => {
 			const len = fullMarkdown.length;
-			let __currentMarkdown = "";
+			let __currentMarkdown = currentMarkdown.current;
 			const showResume = () => {
 				if (__currentMarkdown.length < len) {
 					__currentMarkdown = me.substring(0, __currentMarkdown.length + 1);
-					setCurrentMarkdown(() => __currentMarkdown);
+					currentMarkdown.current = __currentMarkdown;
 					const lastChar = __currentMarkdown[__currentMarkdown.length - 2];
 					resumeEditorRef.current?.goBottom();
 					if (lastChar === "\n") {
@@ -120,7 +120,7 @@ const HomePage: FC = () => {
 							mobileGoBottom(10000);
 						}
 					}
-					setTimer([...timer, setTimeout(showResume, interVal)]);
+					timer.current.push(setTimeout(showResume, interVal.current));
 				} else {
 					resolve();
 				}
@@ -150,17 +150,17 @@ const HomePage: FC = () => {
 		if (isMobile) {
 			mobileGoBottom(10000);
 		}
-		setTimer([]);
+		timer.current = [];
 	};
 	const onSkipAnimation = () => {
-		if (timer.length) {
-			timer.forEach((t) => clearTimeout(t));
-			setTimer([]);
+		if (timer.current.length) {
+			timer.current.forEach((t) => clearTimeout(t));
+			timer.current = [];
 		}
 		let __styleCode = "";
 		fullStyle.map((f) => (__styleCode += f));
 		setStyleCode(__styleCode);
-		setCurrentMarkdown(fullMarkdown);
+		currentMarkdown.current = fullMarkdown
 		setEnableHtml(true);
 		if (resumeEditorRef.current) {
 			resumeEditorRef.current?.goBottom();
@@ -176,8 +176,8 @@ const HomePage: FC = () => {
 		}
 	};
 	const onPauseAnimation = (paused: boolean) => {
-		if (timer.length && paused) {
-			timer.forEach((t) => clearTimeout(t));
+		if (timer.current.length && paused) {
+			timer.current.forEach((t) => clearTimeout(t));
 		} else {
 			makeResume();
 		}
@@ -188,7 +188,7 @@ const HomePage: FC = () => {
 		updateMainStyle();
 	};
 	useEffect(() => {
-		if (timer.length) timer.forEach((t) => clearTimeout(t));
+		if (timer.current.length) timer.current.forEach((t) => clearTimeout(t));
 		setMobileOrWeb();
 		makeResume();
 	}, []);
@@ -196,10 +196,14 @@ const HomePage: FC = () => {
 
 	return (
 		<div className="h-full w-full overflow-y-auto current-page">
-			<AnimationSpeed updateSpeed={setInterVal} showHeader={onShowHeader} speed={interVal} />
+			<AnimationSpeed
+				updateSpeed={(value) => (interVal.current = value)}
+				showHeader={onShowHeader}
+				speed={interVal.current}
+			/>
 			<div className="main" style={mainStyle}>
 				<StyleEditor styleCode={styleCode} setStyleCode={setStyleCode} ref={styleEditorRef} />
-				<ResumeEditor markdown={currentMarkdown} showHTML={enableHtml} ref={resumeEditorRef} />
+				<ResumeEditor markdown={currentMarkdown.current} showHTML={enableHtml} ref={resumeEditorRef} />
 			</div>
 			<BottomNav ref={bottomNavRef} onSkip={onSkipAnimation} onPaused={onPauseAnimation} />
 		</div>
