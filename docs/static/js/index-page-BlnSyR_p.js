@@ -1,4 +1,4 @@
-import{b as e,Q as D,J as o,S as Q}from"./common-ntSfBM1a.js";import{P as O,I as K,e as X}from"./element-ui-B79v0QtT.js";import{d as ee}from"./chatgpt-CYDpgU_b.js";const z=[`/*
+import{b as e,Q as A,J as o,S as B}from"./common-ntSfBM1a.js";import{P as D,T as z,e as $}from"./element-ui-SAv-zIFg.js";import{d as F}from"./chatgpt-CYDpgU_b.js";const U=[`/*
 * 大家好,我叫花如雪(FlowersLikeSnow),
 * 是一个web前端开发工程师,
 * 这是一个我为自己而写的简历.
@@ -31,7 +31,7 @@ import{b as e,Q as D,J as o,S as Q}from"./common-ntSfBM1a.js";import{P as O,I as
 * 将这些代码都装在这里面
 */
 .styleEditor{
-	width:45%;
+	width:calc(50% - .5em);
 	height:77vh;
 	background:#032331;
 	border:1px solid #f2f2f2;
@@ -61,10 +61,9 @@ import{b as e,Q as D,J as o,S as Q}from"./common-ntSfBM1a.js";import{P as O,I as
 */
 .styleEditor{
 	position:absolute;
-	right:7%;
+	right:0;
 	top:0;
 	transition:none;
-	transform:rotateY(-10deg) translateZ(100px);
 }
 /*
 * 我把滚动条的样式也设置一下.
@@ -83,7 +82,7 @@ import{b as e,Q as D,J as o,S as Q}from"./common-ntSfBM1a.js";import{P as O,I as
 	position:absolute;
 	left:0;
 	top:0;
-	width:45%;
+	width:calc(50% - .5em);
 	height:93vh;
 	background-color:#032331;
 	transform:rotateY(10deg) translateZ(-100px);
@@ -171,7 +170,7 @@ import{b as e,Q as D,J as o,S as Q}from"./common-ntSfBM1a.js";import{P as O,I as
 * 2...
 * 1...
 * 音乐开始......
-*/`],te=[`/*
+*/`],V=[`/*
 * 大家好,我叫花如雪(FlowersLikeSnow),
 * 是一个web前端开发工程师,
 * 这是一个我为自己而写的简历.
@@ -204,7 +203,7 @@ import{b as e,Q as D,J as o,S as Q}from"./common-ntSfBM1a.js";import{P as O,I as
 * 将这些代码都装在这里面
 */
 .styleEditor{
-	width:100%;
+	width: calc(100% - 1em);
 	height:50%;
 	min-height:35vh;
 	background:#032331;
@@ -251,10 +250,11 @@ import{b as e,Q as D,J as o,S as Q}from"./common-ntSfBM1a.js";import{P as O,I as
 * 好吧,接下来,我就再写一个编辑器.
 */
 .resumeEditor{
-	width:100%;
+	width: calc(100% - 1em);
 	height:50%;
 	min-height:35vh;
 	background-color:#032331;
+	margin-bottom:10px;
 }
 /*
 * 编辑器写好了,开始往里面写内容,我开始介绍我自己了......
@@ -339,7 +339,7 @@ import{b as e,Q as D,J as o,S as Q}from"./common-ntSfBM1a.js";import{P as O,I as
 * 2...
 * 1...
 * 音乐开始......
-*/`],$=`
+*/`],H=`
 * 花如雪(FlowersLikeSnow),
 * 目前在长沙工作
 -----
@@ -371,6 +371,6 @@ import{b as e,Q as D,J as o,S as Q}from"./common-ntSfBM1a.js";import{P as O,I as
 * [暂时没想好放什么...](http://lijundong.cn)
 
 * 本效果参考了该[源码](https://github.com/eveningwater/vue-resume)，在该基础上更新当前React版本。
-> 如果你喜欢这个效果的话,欢迎私信我。`,oe=e.forwardRef((w,m)=>{const{styleCode:n,setStyleCode:s}=w,a=b=>{console.log({e:b}),s(b.target.textContent||"")},p=e.useMemo(()=>`<style>${n}</style>`,[n]),i=e.useMemo(()=>D.highlight(n,D.languages.css,"zh"),[n]);e.useImperativeHandle(m,()=>({goBottom:h,containerRef:l.current}));const h=()=>{l!=null&&l.current&&(l.current.scrollTop=1e5)},l=e.useRef(null);return o.jsxs("div",{className:"container style-editor-component",children:[o.jsx("div",{className:"style-code",dangerouslySetInnerHTML:{__html:p}}),o.jsx("div",{className:"styleEditor",dangerouslySetInnerHTML:{__html:i},contentEditable:!0,onBlur:a,ref:l})]})}),ne=e.forwardRef((w,m)=>{const{markdown:n,showHTML:s}=w,a=e.useMemo(()=>s?Q(n):n,[n,s]);e.useImperativeHandle(m,()=>({goBottom:p,containerRef:i.current}));const p=()=>{i!=null&&i.current&&(i.current.scrollTop=1e5)},i=e.useRef(null);return o.jsx("div",{className:`resume-editor-component resumeEditor ${s?"htmlMode":""}`,ref:i,children:s?o.jsx("div",{dangerouslySetInnerHTML:{__html:a}}):o.jsx("pre",{children:a})})}),se=w=>{const{updateSpeed:m,showHeader:n,speed:s}=w,[a,p]=e.useState(!1),[i,h]=e.useState(s||0);return o.jsx("div",{className:"animation-speed-component",children:o.jsx(O,{title:"修改写字速度",description:o.jsx(K,{type:"text",style:{textAlign:"center"},value:i,onChange:l=>h(Number(l.target.value)),placeholder:"请输入1到100的整数","v-number":!0}),okText:"确定",onConfirm:()=>m(i),cancelText:"取消",onCancel:()=>h(s),children:o.jsx("div",{className:"down",onClick:()=>{p(!a),n(!a)},children:o.jsx(X,{style:{color:"#2396ef",fontSize:"30px"}})})})})},re=[{title:"个人网站",url:"http://lijundong.cn"},{title:"码云",url:"https://gitee.com/FlowersLikeSnow"}],ie=e.forwardRef((w,m)=>{const{onSkip:n,onPaused:s}=w;e.useImperativeHandle(m,()=>({playMusic:a,containerRef:p.current}));const a=()=>{b(!0),v(),setTimeout(()=>{y&&y.play()},0)},p=e.useRef(null),[i,h]=e.useState(!1),[l,b]=e.useState(!1),T=()=>{const c=!i;h(c),s(c)},H=()=>{n()},[y,S]=e.useState(),f=()=>{b(!l),y&&y[l?"pause":"play"]()},v=()=>{if(y)y.load();else{const c=new Audio;c.loop=!0,c.autoplay=!0,c.src="https://www.eveningwater.com/static/resouces/audio/5.mp3",S(c)}};return o.jsxs("div",{className:"bottom-nav-component",children:[o.jsx("a",{onClick:T,id:"pause",children:i?"继续动画":"暂停动画"}),o.jsx("a",{onClick:H,id:"skipAnimation",children:"跳过动画"}),o.jsx("p",{children:re.map((c,R)=>o.jsx("span",{children:o.jsx("a",{href:c.url,target:"_blank",rel:"noopener noreferrer",children:c.title})},c.url+R))}),o.jsx("div",{id:"music",onClick:f,className:`music ${l?"rotate":""}`})]})}),ue=()=>{const[w,m]=e.useState({}),n=e.useRef(null),s=e.useRef(null),a=e.useRef(null),[p,i]=e.useState(!1),[h,l]=e.useState(!1),[b,T]=e.useState(z),[H]=e.useState($),[y,S]=e.useState(""),[f,v]=e.useState([]),[c,R]=e.useState(50),[F,P]=e.useState(""),[E,V]=e.useState(!!navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)||window.innerWidth<666),_=()=>{m(E?p?{height:"calc(100% - 100px)",marginBottom:"60px"}:{height:"calc(100% - 60px)",marginBottom:"60px"}:p?{height:"calc(100% - 70px)"}:{height:"calc(100% - 30px)"})},L=()=>{T(E?te:z),_()},W=()=>{V(window.innerWidth<666),L(),S(""),P(""),l(!1),I()},j=t=>{document.body.scrollTop=document.documentElement.scrollTop=t},N=t=>{var g,d,k,M;const u=((d=(g=s.current)==null?void 0:g.containerRef)==null?void 0:d.getBoundingClientRect())||{top:0,left:0,width:0},r=((M=(k=n.current)==null?void 0:k.containerRef)==null?void 0:M.offsetHeight)||0;return Math.abs(t?u.top-r:r-parseInt(`${u.width}`)+u.top)},A=(t,u)=>{let r=y||u||"";return new Promise(g=>{const d=()=>{var B;const k=b[t];if(!k)return;const M=b.filter((x,C)=>C<=t).map(x=>x.length).reduce((x,C)=>x+C,0),J=M-k.length;if(r.length<M){const x=r.length-J,C=k.substring(x,x+1)||" ";r+=C,(B=n.current)==null||B.goBottom(),S(()=>r),k.substring(x-1,x)===`
-`&&(E&&!h?j(1e4):s!=null&&s.current&&(n!=null&&n.current)&&j(N(!1))),v([...f,setTimeout(d,c)])}else S(()=>r),g(r)};d()})},q=()=>new Promise(t=>{const u=H.length;let r="";const g=()=>{var d;if(r.length<u){r=$.substring(0,r.length+1),P(()=>r);const k=r[r.length-2];(d=s.current)==null||d.goBottom(),k===`
-`&&E&&!h&&j(1e4),v([...f,setTimeout(g,c)])}else t()};g()}),U=()=>new Promise(t=>{l(!0),E&&s.current&&n.current&&j(N(!0)),t()}),I=async()=>{var u;let t=await A(0);await q(),t=await A(1,t),await U(),t=await A(2,t),S(t),a.current&&((u=a.current)==null||u.playMusic()),E&&j(1e4),v([])},Y=()=>{var u,r,g;f.length&&(f.forEach(d=>clearTimeout(d)),v([]));let t="";b.map(d=>t+=d),S(t),P(H),l(!0),s.current&&((u=s.current)==null||u.goBottom()),n.current&&((r=n.current)==null||r.goBottom()),a.current&&((g=a.current)==null||g.playMusic()),E&&j(1e4)},Z=t=>{f.length&&t?f.forEach(u=>clearTimeout(u)):I()},G=t=>{i(t),_()};return e.useEffect(()=>{f.length&&f.forEach(t=>clearTimeout(t)),L(),I()},[]),window.addEventListener("resize",ee(W,100),!1),o.jsxs("div",{className:"h-full w-full overflow-y-auto current-page",children:[o.jsx(se,{updateSpeed:R,showHeader:G,speed:c}),o.jsxs("div",{className:"main",style:w,children:[o.jsx(oe,{styleCode:y,setStyleCode:S,ref:n}),o.jsx(ne,{markdown:F,showHTML:h,ref:s})]}),o.jsx(ie,{ref:a,onSkip:Y,onPaused:Z})]})};export{ue as default};
+> 如果你喜欢这个效果的话,欢迎私信我。`,q=e.forwardRef((h,s)=>{const{styleCode:n,setStyleCode:a}=h,p=c=>{console.log({e:c}),a(c.target.textContent||"")},f=e.useMemo(()=>`<style>${n}</style>`,[n]),r=e.useMemo(()=>A.highlight(n,A.languages.css,"zh"),[n]);e.useImperativeHandle(s,()=>({goBottom:y,containerRef:i.current}));const y=()=>{i!=null&&i.current&&(i.current.scrollTop=1e5)},i=e.useRef(null);return o.jsxs("div",{className:"container style-editor-component",children:[o.jsx("div",{className:"style-code",dangerouslySetInnerHTML:{__html:f}}),o.jsx("div",{className:"styleEditor",dangerouslySetInnerHTML:{__html:r},contentEditable:!0,onBlur:p,ref:i})]})}),W=e.forwardRef((h,s)=>{const{markdown:n,showHTML:a}=h,p=e.useMemo(()=>a?B(n):n,[n,a]);e.useImperativeHandle(s,()=>({goBottom:f,containerRef:r.current}));const f=()=>{r!=null&&r.current&&(r.current.scrollTop=1e5)},r=e.useRef(null);return o.jsx("div",{className:`resume-editor-component resumeEditor ${a?"htmlMode":""}`,ref:r,children:a?o.jsx("div",{dangerouslySetInnerHTML:{__html:p}}):o.jsx("pre",{children:p})})}),G=h=>{const{updateSpeed:s,speed:n}=h,[a,p]=e.useState(!1),[f,r]=e.useState(n||0);return o.jsx("div",{className:"animation-speed-component",children:o.jsx(D,{title:"修改写字速度",description:o.jsx(z,{className:"w-[200px]",style:{textAlign:"center"},value:f,max:100,min:1,onChange:y=>r(y||0),placeholder:"请输入1到100的整数"}),okText:"确定",onConfirm:()=>s(f),cancelText:"取消",onCancel:()=>r(n),children:o.jsx("div",{className:"down",onClick:()=>p(!a),children:o.jsx($,{style:{color:"#2396ef",fontSize:"30px"}})})})})},J=[{title:"个人网站",url:"http://lijundong.cn"},{title:"码云",url:"https://gitee.com/FlowersLikeSnow"}],Q=e.forwardRef((h,s)=>{const{onSkip:n,onPaused:a}=h;e.useImperativeHandle(s,()=>({playMusic:p,containerRef:f.current}));const p=()=>{c(!0),k(),setTimeout(()=>{d&&d.play()},0)},f=e.useRef(null),[r,y]=e.useState(!1),[i,c]=e.useState(!1),j=()=>{const m=!r;y(m),a(m)},x=()=>{n()},[d,v]=e.useState(),M=()=>{c(!i),d&&d[i?"pause":"play"]()},k=()=>{if(d)d.load();else{const m=new Audio;m.loop=!0,m.autoplay=!0,m.src="https://www.eveningwater.com/static/resouces/audio/5.mp3",v(m)}};return o.jsxs("div",{className:"bottom-nav-component",children:[o.jsx("a",{onClick:j,id:"pause",children:r?"继续动画":"暂停动画"}),o.jsx("a",{onClick:x,id:"skipAnimation",children:"跳过动画"}),o.jsx("p",{children:J.map((m,S)=>o.jsx("span",{children:o.jsx("a",{href:m.url,target:"_blank",rel:"noopener noreferrer",children:m.title})},m.url+S))}),o.jsx("div",{id:"music",onClick:M,className:`music ${i?"rotate":""}`})]})}),O=()=>{const[,h]=e.useState(""),s=e.useRef(null),n=e.useRef(null),a=e.useRef(null),p=e.useRef(null),[f,r]=e.useState(!1),[y]=e.useState(H),i=e.useRef(""),c=e.useRef([]),j=e.useRef(50),x=e.useRef(""),d=e.useMemo(()=>!!navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)||window.innerWidth<666,[navigator.userAgent,window.innerWidth]),v=e.useMemo(()=>d?V:U,[d]),M=()=>{c.current.length&&(c.current.forEach(t=>clearTimeout(t)),c.current=[]),i.current="",x.current="",r(!1),C()},k=t=>{p.current&&(p.current.scrollTop=t)},m=t=>{var g,w,E,T;const l=((w=(g=n.current)==null?void 0:g.containerRef)==null?void 0:w.getBoundingClientRect())||{top:0,left:0,width:0},u=((T=(E=s.current)==null?void 0:E.containerRef)==null?void 0:T.offsetHeight)||0;return Math.abs(t?l.top-u:u-parseInt(`${l.width}`)+l.top)},S=t=>{let l=i.current;return new Promise(u=>{const g=()=>{var P;const w=v[t];if(!w)return;const E=v.filter((b,R)=>R<=t).map(b=>b.length).reduce((b,R)=>b+R,0),T=E-w.length;if(l.length<E){const b=l.length-T,R=w.substring(b,b+1)||" ";l+=R,(P=s.current)==null||P.goBottom(),i.current=l,h(()=>l),w.substring(b-1,b)===`
+`&&(d&&!f?k(1e4):n!=null&&n.current&&(s!=null&&s.current)&&k(m(!1))),c.current.push(setTimeout(g,j.current))}else u(l)};g()})},L=()=>new Promise(t=>{const l=y.length;let u=x.current;const g=()=>{var w;if(u.length<l){u=H.substring(0,u.length+1),x.current=u,h(()=>u);const E=u[u.length-2];(w=n.current)==null||w.goBottom(),E===`
+`&&d&&!f&&k(1e4),c.current.push(setTimeout(g,j.current))}else t()};g()}),N=()=>new Promise(t=>{r(!0),d&&n.current&&s.current&&k(m(!0)),t()}),C=async()=>{var t;await S(0),await L(),await S(1),await N(),await S(2),a.current&&((t=a.current)==null||t.playMusic()),d&&k(1e4),c.current=[]},I=()=>{var t,l,u;c.current.length&&(c.current.forEach(g=>clearTimeout(g)),c.current=[]),v.map(g=>i.current+=g),x.current=y,r(!0),n.current&&((t=n.current)==null||t.goBottom()),s.current&&((l=s.current)==null||l.goBottom()),a.current&&((u=a.current)==null||u.playMusic()),d&&k(1e4)},_=t=>{c.current.length&&t?c.current.forEach(l=>clearTimeout(l)):C()};return e.useEffect(M,[]),window.addEventListener("resize",F(M,100),!1),o.jsxs("div",{className:"h-full w-full overflow-y-auto current-page",ref:p,children:[o.jsx(G,{updateSpeed:t=>j.current=t,speed:j.current}),o.jsxs("div",{className:"main",children:[o.jsx(q,{styleCode:i.current,setStyleCode:t=>{i.current=t,h(()=>t)},ref:s}),o.jsx(W,{markdown:x.current,showHTML:f,ref:n})]}),o.jsx(Q,{ref:a,onSkip:I,onPaused:_})]})};export{O as default};
