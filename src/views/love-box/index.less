@@ -4,9 +4,9 @@
 	background-color: #ffc5b3;
 	background-image: radial-gradient(#ffeded, #ffc7c7);
 	overflow: hidden;
-	&-wrap {
+	.love-box-page-wrap {
 		position: relative;
-		padding-top: 22.5%;
+		padding-top: 5%;
 		/*立方体效果*/
 		.set {
 			width: 50px;
@@ -16,42 +16,15 @@
 			/*设置动画播放样式:动画对象rotate 播放速度曲线从头到尾相同 时间20s 播放次数无限次*/
 			animation: rotate linear 20s infinite;
 		}
-
 		/*动画的旋转方式,先设定总体的*/
-		/*兼容*/
-		/*firefox*/
 		@keyframes rotate {
 			from {
 				transform: rotateX(0deg) rotateY(0deg);
 			}
-
 			to {
 				transform: rotateX(360deg) rotateY(360deg);
 			}
 		}
-
-		/*sofari chrome*/
-		@keyframes rotate {
-			from {
-				transform: rotateX(0deg) rotateY(0deg);
-			}
-
-			to {
-				transform: rotateX(360deg) rotateY(360deg);
-			}
-		}
-
-		/*opera*/
-		@keyframes rotate {
-			from {
-				transform: rotateX(0deg) rotateY(0deg);
-			}
-
-			to {
-				transform: rotateX(360deg) rotateY(360deg);
-			}
-		}
-
 		/*设置单个图片的样式*/
 		.set div {
 			position: absolute;

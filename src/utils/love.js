@@ -77,7 +77,8 @@ var ParticlePool = (function () {
 })();
 /** Putting it all together*/
 export default function draw(canvas) {
-    var context = canvas.getContext('2d'), particles = new ParticlePool(settings.particles.length), particleRate = settings.particles.length / settings.particles.duration, // particles/sec     
+    clearTimeout(window.drawLove)
+    var context = canvas.getContext('2d'),particles = new ParticlePool(settings.particles.length), particleRate = settings.particles.length / settings.particles.duration, // particles/sec     
         time; // get point on heart with -PI <= t <= PI 
     function pointOnHeart(t) { return new Point(160 * Math.pow(Math.sin(t), 3), 130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25); } // creating the particle image using a dummy canvas 
     var image = (function () {
@@ -100,5 +101,5 @@ export default function draw(canvas) {
     } // handle (re-)sizing of the canvas 
     function onResize() { canvas.width = canvas.clientWidth; canvas.height = canvas.clientHeight; }
     window.onresize = onResize; // delay rendering bootstrap 
-    setTimeout(function () { onResize(); render(); }, 10);
+    window.drawLove = setTimeout(()=> { onResize(); render(); }, 10);
 }

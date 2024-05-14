@@ -2,7 +2,7 @@
   "name": "antd-demo",
   "private": true,
   "homepage": "./",  
-  "version": "0.0.0",
+  "ersion": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

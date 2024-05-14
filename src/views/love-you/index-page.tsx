@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from "react";
 import "./index.less";
-// import draw from "@/utils/love";
+// import draw from "@/utils/love.js";
 
 const BookPage: FC = () => {
 	const username = '人先欠着'

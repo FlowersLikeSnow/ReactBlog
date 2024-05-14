@@ -5,15 +5,11 @@
   background-image: radial-gradient(#ffeded, #ffc7c7);
   overflow: hidden;
 }
-.love-box-page-wrap {
+.love-box-page .love-box-page-wrap {
   position: relative;
-  padding-top: 22.5%;
+  padding-top: 5%;
   /*立方体效果*/
   /*动画的旋转方式,先设定总体的*/
-  /*兼容*/
-  /*firefox*/
-  /*sofari chrome*/
-  /*opera*/
   /*设置单个图片的样式*/
   /*向屏幕外移动，离观察者远离100px，与正前方图片重叠，再绕Y轴转动90度,形成右面*/
   /*向屏幕外移动，离观察者远离100px，与正前方图片重叠，再绕X轴转动90度,形成顶面*/
@@ -22,7 +18,7 @@
   /*鼠标移入后样式*/
   /**/
 }
-.love-box-page-wrap .set {
+.love-box-page .love-box-page-wrap .set {
   width: 50px;
   height: 50px;
   margin: 0 auto;
@@ -38,23 +34,7 @@
     transform: rotateX(360deg) rotateY(360deg);
   }
 }
-@keyframes rotate {
-  from {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  to {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
-}
-@keyframes rotate {
-  from {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  to {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
-}
-.love-box-page-wrap .set div {
+.love-box-page .love-box-page-wrap .set div {
   position: absolute;
   width: 200px;
   height: 200px;
@@ -62,33 +42,33 @@
   /*持续时间为4s*/
   transition: all 0.4s;
 }
-.love-box-page-wrap .pic {
+.love-box-page .love-box-page-wrap .pic {
   width: 200px;
   height: 200px;
   object-fit: cover;
 }
-.love-box-page-wrap .set .out_1 {
+.love-box-page .love-box-page-wrap .set .out_1 {
   /*绕Y轴转动0度，向屏幕外偏移，离观察者近100px*/
   transform: rotateY(0deg) translateZ(100px);
 }
-.love-box-page-wrap .set .out_2 {
+.love-box-page .love-box-page-wrap .set .out_2 {
   /*绕Y轴转动0度,向屏幕内移动，离观察者远离100px*/
   transform: rotateY(0deg) translateZ(-100px);
 }
-.love-box-page-wrap .set .out_3 {
+.love-box-page .love-box-page-wrap .set .out_3 {
   /*向屏幕外移动，离观察者远离100px，与正前方图片重叠，再绕Y轴转动-90度,形成左面*/
   transform: rotateY(-90deg) translateZ(100px);
 }
-.love-box-page-wrap .set .out_4 {
+.love-box-page .love-box-page-wrap .set .out_4 {
   transform: rotateY(90deg) translateZ(100px);
 }
-.love-box-page-wrap .set .out_5 {
+.love-box-page .love-box-page-wrap .set .out_5 {
   transform: rotateX(90deg) translateZ(100px);
 }
-.love-box-page-wrap .set .out_6 {
+.love-box-page .love-box-page-wrap .set .out_6 {
   transform: rotateX(-90deg) translateZ(100px);
 }
-.love-box-page-wrap .set span {
+.love-box-page .love-box-page-wrap .set span {
   display: block;
   width: 100px;
   height: 100px;
@@ -96,45 +76,45 @@
   top: 50px;
   left: 50px;
 }
-.love-box-page-wrap .set .s_pic {
+.love-box-page .love-box-page-wrap .set .s_pic {
   width: 100px;
   height: 100px;
   object-fit: cover;
 }
-.love-box-page-wrap .set .in_1 {
+.love-box-page .love-box-page-wrap .set .in_1 {
   transform: rotateY(0deg) translateZ(50px);
 }
-.love-box-page-wrap .set .in_2 {
+.love-box-page .love-box-page-wrap .set .in_2 {
   transform: translateZ(-50px) rotateY(180deg);
 }
-.love-box-page-wrap .set .in_3 {
+.love-box-page .love-box-page-wrap .set .in_3 {
   transform: rotateY(-90deg) translateZ(50px);
 }
-.love-box-page-wrap .set .in_4 {
+.love-box-page .love-box-page-wrap .set .in_4 {
   transform: rotateY(90deg) translateZ(50px);
 }
-.love-box-page-wrap .set .in_5 {
+.love-box-page .love-box-page-wrap .set .in_5 {
   transform: rotateX(90deg) translateZ(50px);
 }
-.love-box-page-wrap .set .in_6 {
+.love-box-page .love-box-page-wrap .set .in_6 {
   transform: rotateX(-90deg) translateZ(50px);
 }
-.love-box-page-wrap .set:hover .out_1 {
+.love-box-page .love-box-page-wrap .set:hover .out_1 {
   transform: rotateY(0deg) translateZ(200px);
 }
-.love-box-page-wrap .set:hover .out_2 {
+.love-box-page .love-box-page-wrap .set:hover .out_2 {
   transform: translateZ(-200px) rotateY(0deg);
 }
-.love-box-page-wrap .set:hover .out_3 {
+.love-box-page .love-box-page-wrap .set:hover .out_3 {
   transform: rotateY(-90deg) translateZ(200px);
 }
-.love-box-page-wrap .set:hover .out_4 {
+.love-box-page .love-box-page-wrap .set:hover .out_4 {
   transform: rotateY(90deg) translateZ(200px);
 }
-.love-box-page-wrap .set:hover .out_5 {
+.love-box-page .love-box-page-wrap .set:hover .out_5 {
   transform: rotateX(90deg) translateZ(200px);
 }
-.love-box-page-wrap .set:hover .out_6 {
+.love-box-page .love-box-page-wrap .set:hover .out_6 {
   transform: rotateX(-90deg) translateZ(200px);
 }
 .love-box-page .textCon {
