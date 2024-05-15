@@ -5,7 +5,7 @@ import { resolve } from "path"
 const VITE_WEB_PORT = '1314';
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/ReactBlog/",
+  base: "./",
   plugins: [
     WindiCSS(),
     react(),
