@@ -22,7 +22,7 @@ const fullMarkdown:string = `
 * [环企电商平台系统软件V1.0](https://ecloud-test.galasystec.net.cn/pda/#/login)
 * [石基环企-智能收银系统](https://ecloud-test.galasystec.net.cn/pos/#/login)
 * [石基环企逸云eCloud运营管理平台](https://ecloud-test.galasystec.net.cn/platform/#/login)
-* 石基环企自助机售票APP
+* [石基环企自助机售票APP](https://ecloud-test.galasystec.net.cn/tvm/)
 * 相关APP页面若干
 -----
 个人项目

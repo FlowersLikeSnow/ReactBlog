@@ -2,9 +2,9 @@ import {
 	CodeSandboxOutlined,
 	HomeOutlined,
 	FireOutlined,
-	// SmileOutlined,
+	DropboxSquareFilled,
 	HeartOutlined,
-	// HeatMapOutlined
+	RocketOutlined,
 } from "@ant-design/icons";
 import { MenuProps } from "antd";
 import { createContext, useEffect, useMemo } from "react";
@@ -62,7 +62,19 @@ const menuItems: MenuItem[] = [
 	// 			]
 	// 		}
 	// 	]
-	// }
+	// },
+	{
+		key: "3",
+		label: "GAME",
+		icon: <DropboxSquareFilled />,
+		children: [
+			{
+				label: "飞机大战",
+				key: "/views/game/aircraft-battle/index", 
+				icon: <RocketOutlined />
+			},
+		]
+	},
 ];
 export const useLayout = () => {
 	const location = useLocation();
