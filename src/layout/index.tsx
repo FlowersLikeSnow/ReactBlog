@@ -1,78 +1,16 @@
-import { Layout, Menu, MenuProps } from "antd";
+import { Layout, Menu } from "antd";
 import Sider from "antd/es/layout/Sider";
 import "./index.less";
 import { Content } from "antd/es/layout/layout";
-import {
-	CodeSandboxOutlined,
-	HomeOutlined,
-	FireOutlined,
-	// SmileOutlined,
-	HeartOutlined,
-	HeatMapOutlined
-} from "@ant-design/icons";
-import { FC, useEffect, useState } from "react";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
-const layoutStyle = {
-	overflow: "hidden",
-	width: "100%",
-	maxWidth: "100%"
-};
-const contentStyle: React.CSSProperties = {
-	maxHeight: "100%",
-	height: "100%",
-	color: "unset",
-	backgroundColor: "unset",
-	overflowY: "auto",
-	position: "relative"
-};
+import { FC, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import { useLayout } from "./layout";
 
-const siderStyle: React.CSSProperties = {
-	color: "#fff",
-	backgroundColor: "#001529"
-};
-type MenuItem = Required<MenuProps>["items"][number];
-const items: MenuItem[] = [
-	{ key: "/views/home/index", icon: <HomeOutlined />, label: "首页" },
-	{
-		key: "1",
-		label: "恋爱系列",
-		icon: <HeartOutlined />,
-		children: [
-			{ key: "/views/love-box/index", icon: <CodeSandboxOutlined />, label: "恋爱盒子" },
-			{ key: "/views/love-you/index", icon: <FireOutlined />, label: "爱心发射" }
-		]
-	},
-	{
-		key: "2",
-		label: "THREE.JS",
-		icon: <HeatMapOutlined />,
-		children: [
-			{
-				key: "21",
-				label: "原生three.js",
-				type: "group",
-				children: [{ key: "/views/threejs/three/index", icon: <HeatMapOutlined />, label: "入门盒子" }]
-			},
-			{
-				key: "22",
-				label: "fiber",
-				type: "group",
-				children: [
-					{ key: "/views/threejs/fiber/box-1/index", icon: <HeatMapOutlined />, label: "入门盒子" },
-					{ key: "/views/threejs/fiber/box-2/index", icon: <HeatMapOutlined />, label: "model加载" }
-				]
-			}
-		]
-	}
-];
 const LayoutPage: FC = () => {
+	const { layoutStyle, contentStyle, siderStyle, menuItems, selecedMenu } = useLayout();
 	const [collapsed, setCollapsed] = useState(true);
 	const nav = useNavigate();
-	const location = useLocation();
-	useEffect(() => {
-		nav(location.pathname ? location.pathname : `${items[0]?.key}`);
-		console.log({ location });
-	}, []);
+
 	return (
 		<div className="h-full w-full flex layout-page">
 			<Layout style={layoutStyle}>
@@ -92,11 +30,11 @@ const LayoutPage: FC = () => {
 						/>
 					</div>
 					<Menu
-						defaultSelectedKeys={[location.pathname ? location.pathname : `${items[0]?.key}`]}
+						defaultSelectedKeys={[selecedMenu]}
 						defaultOpenKeys={["sub1"]}
 						mode="inline"
 						theme="dark"
-						items={items}
+						items={menuItems}
 						onClick={({ key }) => nav(key)}
 					/>
 				</Sider>

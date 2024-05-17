@@ -30,7 +30,7 @@ export default defineConfig({
   },
   clearScreen: false,
   build: {
-    outDir: 'docs',
+    // outDir: 'docs',
     minify: "esbuild",
     rollupOptions: {
       output: {

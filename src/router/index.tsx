@@ -69,7 +69,6 @@ const generateRouter = (routers: any) => {
 	});
 };
 
-console.log(generateRouter(routes));
 /**
  * 路由
  * @returns

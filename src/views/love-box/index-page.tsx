@@ -13,7 +13,6 @@ const LoveBoxPage: FC = () => {
 		};
 	});
 	useEffect(() => {
-		console.log({ loveBoxPageRef });
 		init();
 	}, []);
 	const loveTimer = () => {
@@ -54,7 +53,6 @@ const LoveBoxPage: FC = () => {
 		const box = loveBoxPageRef.current;
 		if (!box) return;
 		const width = box?.offsetWidth;
-		console.log({ width });
 
 		const count = parseInt(`${(width / 50) * 5}`);
 		for (let i = 0; i < count; i++) {
