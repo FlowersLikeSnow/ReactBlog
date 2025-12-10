@@ -2,7 +2,6 @@ export default {
 	// token: {
 	// 	colorPrimary: "#417bab",
 	// 	colorInfo: "#417bab",
-	// 	fontSize: 14
 	// },
 	// components: {
 	// 	Modal: {
