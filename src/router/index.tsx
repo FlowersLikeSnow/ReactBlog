@@ -12,7 +12,8 @@ const pages = Object.keys(pageFilesCtx).map((k: string) => {
 		.split("/")
 		.filter((v) => v != ".." && v != "views")
 		.map((v) => v.replace("-page.tsx", ""));
-	const path = arr.join("/");
+	const path = arr.filter((v) => v !== "index").join("/");
+	console.log(path, arr);
 	const name =
 		arr
 			.map((v) => {

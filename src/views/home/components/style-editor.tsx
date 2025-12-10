@@ -1,7 +1,7 @@
 import { forwardRef, useImperativeHandle, useMemo, useRef } from "react";
 import Prism from "prismjs";
-import { StyleEditorRef } from "../../type";
-import './index.less'
+import { StyleEditorRef } from "../type";
+import '../index.less'
 import { AnyObject } from "antd/es/_util/type";
 /**
  * 样式组件
@@ -38,7 +38,7 @@ export const StyleEditor = forwardRef<
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	return (
-		<div className="container style-editor-component">
+		<div className="container StyleEditorComponent">
 			<div className="style-code" dangerouslySetInnerHTML={{ __html: codeInstyleTag }} />
 			<div
 				className="styleEditor"

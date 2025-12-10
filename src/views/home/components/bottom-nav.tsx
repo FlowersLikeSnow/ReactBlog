@@ -1,6 +1,6 @@
 import { forwardRef, useImperativeHandle, useRef, useState } from "react";
-import { BottomNavRef } from "../../type";
-import "./index.less";
+import { BottomNavRef } from "../type";
+import "../index.less";
 const projectUrls = [
 	{
 		title: "个人网站",
@@ -17,7 +17,7 @@ const projectUrls = [
 	{
 		title: "码云",
 		url: "https://gitee.com/FlowersLikeSnow"
-	},
+	}
 	// {
 	// 	title: "博客",
 	// 	url: "https://www.cnblogs.com/eveningwater/"
@@ -64,7 +64,7 @@ export const BottomNav = forwardRef<
 	const [paused, setPaused] = useState<boolean>(false);
 	const [playing, setPlaying] = useState<boolean>(false);
 	const onPauseAnimation = () => {
-		const status = !paused
+		const status = !paused;
 		setPaused(status);
 		onPaused(status);
 	};
@@ -91,7 +91,7 @@ export const BottomNav = forwardRef<
 	};
 
 	return (
-		<div className="bottom-nav-component">
+		<div className="BottomNavComponent">
 			<a onClick={onPauseAnimation} id="pause">
 				{paused ? "继续动画" : "暂停动画"}
 			</a>

@@ -1,15 +1,14 @@
 import { FC, useEffect, useMemo, useRef, useState } from "react";
-import "./index.less";
 import defaultStyle from "@/files/style";
 import fullMobileStyle from "@/files/styleMobile";
 import me from "@/files/me";
-import StyleEditor from "./components/style-editor";
 import { debounce } from "lodash-es";
 import { BottomNavRef, ResumeEditorRef, StyleEditorRef } from "./type";
-import { AnyObject } from "antd/es/_util/type";
 import ResumeEditor from "./components/resume-editor";
 import AnimationSpeed from "./components/animation-speed";
 import BottomNav from "./components/bottom-nav";
+import StyleEditor from "./components/style-editor";
+import { AnyObject } from "antd/es/_util/type";
 
 const HomePage: FC = () => {
 	// TODO: 用于render重渲染
@@ -25,10 +24,9 @@ const HomePage: FC = () => {
 	const interVal = useRef<number>(50);
 	const currentMarkdown = useRef<string>("");
 	/** 手机屏幕状态 */
-	const isMobile = useMemo(
-		() => !!navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i) || window.innerWidth < 666,
-		[navigator.userAgent, window.innerWidth]
-	);
+	const isMobile = useMemo(() => {
+		return window.innerWidth < 666 || !!navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i);
+	}, []);
 	/** 加载文本 */
 	const fullStyle = useMemo(() => (isMobile ? fullMobileStyle : defaultStyle), [isMobile]);
 
@@ -171,8 +169,19 @@ const HomePage: FC = () => {
 		}
 	};
 
-	useEffect(loadMobileStyle, []);
-	window.addEventListener("resize", debounce(loadMobileStyle, 100), false);
+	useEffect(() => {
+		loadMobileStyle();
+		const handleResize = debounce(loadMobileStyle, 100);
+		window.addEventListener("resize", handleResize);
+		
+		return () => {
+			window.removeEventListener("resize", handleResize);
+			if (timer.current.length) {
+				timer.current.forEach((t) => clearTimeout(t));
+				timer.current = [];
+			}
+		};
+	}, []);
 
 	return (
 		<div className="h-full w-full overflow-y-auto current-page" ref={currentPageRef}>

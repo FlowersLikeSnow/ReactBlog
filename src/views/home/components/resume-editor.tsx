@@ -1,6 +1,6 @@
 import { forwardRef, useImperativeHandle, useMemo, useRef } from "react";
-import { ResumeEditorRef } from "../../type";
-import "./index.less";
+import { ResumeEditorRef } from "../type";
+import "../index.less";
 import { marked } from "marked";
 /**
  * 简历组件
@@ -30,7 +30,7 @@ export const ResumeEditor = forwardRef<
 	};
 	const containerRef = useRef<HTMLDivElement>(null);
 	return (
-		<div className={`resume-editor-component resumeEditor ${showHTML ? "htmlMode" : ""}`} ref={containerRef}>
+		<div className={`ResumeEditorComponent resumeEditor ${showHTML ? "htmlMode" : ""}`} ref={containerRef}>
 			{showHTML ? <div dangerouslySetInnerHTML={{ __html: result }}></div> : <pre>{result as string}</pre>}
 		</div>
 	);

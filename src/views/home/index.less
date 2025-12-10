@@ -1,3 +1,167 @@
-.home-page{
-    
+// .HomePage {
+// 	:global {
+// 	}
+// }
+.AnimationSpeedComponent {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	position: relative;
+
+	&::after,
+	&,
+	&::before {
+		box-sizing: border-box;
+	}
+
+	.down {
+		position: absolute;
+		left: 50%;
+		bottom: -11px;
+		z-index: 9;
+		cursor: pointer;
+		height: 20px;
+	}
+
+	.down:hover,
+	.down:active {
+		border-color: #4086ef transparent transparent transparent;
+	}
+}
+
+.BottomNavComponent {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+
+	position: absolute;
+	z-index: 1;
+	padding: 0 5%;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	height: 20px;
+
+	p {
+		float: right;
+	}
+
+	a {
+		text-decoration: none;
+		color: rgb(88, 87, 87);
+		cursor: pointer;
+		margin-left: 5px;
+
+		&:hover,
+		&:active {
+			color: #2396ef;
+		}
+	}
+
+	&::after,
+	&,
+	&::before {
+		box-sizing: border-box;
+	}
+	.music {
+		width: 25px;
+		height: 25px;
+		cursor: pointer;
+		background: url("http://img.lijundong.cn/Project/Blog/musicIcon.svg") no-repeat center/cover;
+		display: none;
+	}
+
+	audio {
+		opacity: 0;
+	}
+
+	.rotate {
+		animation: rotate 5s linear infinite;
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+@media only screen and (max-width: 666px) {
+	.BottomNavComponent {
+		bottom: unset;
+		top: 0;
+		height: unset;
+		padding: 5px 15px;
+		background-color: rgba(0, 0, 0, 0.25);
+		a {
+			color: #fff;
+		}
+	}
+}
+
+.ResumeEditorComponent {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+
+	&.resumeEditor {
+		overflow: auto;
+		padding: 0.5em;
+		margin: 0.5em;
+		a {
+			transition: color 0.3s linear;
+		}
+
+		.htmlMode {
+			animation: flip 3s;
+		}
+		@keyframes flip {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.StyleEditorComponent {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+
+	&::after,
+	&,
+	&::before {
+		box-sizing: border-box;
+	}
+
+	.styleEditor {
+		overflow: auto;
+		padding: 0.5em;
+		margin: 0.5em;
+		outline: none;
+		white-space: pre-wrap;
+		font-size: 14px;
+		&:focus {
+			box-shadow: 0 0 30px #fff;
+		}
+	}
 }

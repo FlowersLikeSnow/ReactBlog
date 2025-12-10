@@ -49,12 +49,9 @@ export default defineConfig({
             } else {
               return 'common'
             }
-
           }
         }
       }
-
-    },
-
+    }
   }
 })
