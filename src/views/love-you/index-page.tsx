@@ -3,7 +3,7 @@ import "./index.less";
 // import draw from "@/utils/love.js";
 
 const BookPage: FC = () => {
-	const username = '人先欠着'
+	const username = '💗'
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	useEffect(() => {
 		if (canvasRef.current) {
