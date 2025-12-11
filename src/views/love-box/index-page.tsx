@@ -94,9 +94,9 @@ const LoveBoxPage: FC = () => {
 						);
 					})}
 					{/* 设置里层的方块的六个面 */}
-					{Array.from({ length: 6 }, ()=>"").map((_, index) => {
+					{Array.from({ length: 6 }, ()=>"").map((index) => {
 						return (
-							<span className={`in_${index + 1}`} key={index}>
+							<span className={`in_${index}`} key={index}>
 								<img
 									className="s_pic"
 									src={`http://img.lijundong.cn/banner/${index + 1}.jpg`}
