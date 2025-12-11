@@ -10,26 +10,14 @@ const projectUrls = [
 	// 	title: "个人项目",
 	// 	url: "https://www.eveningwater.com/my-web-projects/"
 	// },
-	// {
-	// 	title: "github",
-	// 	url: "https://github.com/eveningwater/"
-	// },
+	{
+		title: "github",
+		url: "https://github.com/FlowersLikeSnow/"
+	},
 	{
 		title: "码云",
 		url: "https://gitee.com/FlowersLikeSnow"
 	}
-	// {
-	// 	title: "博客",
-	// 	url: "https://www.cnblogs.com/eveningwater/"
-	// },
-	// {
-	// 	title: "思否",
-	// 	url: "https://segmentfault.com/u/xishui_5ac9a340a5484"
-	// },
-	// {
-	// 	title: "掘金",
-	// 	url: "https://juejin.im/user/5bcfd79de51d45473245dc1c"
-	// }
 ];
 /**
  * 按钮控制器组件
