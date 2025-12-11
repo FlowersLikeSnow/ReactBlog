@@ -19,10 +19,10 @@ const fullMarkdown:string = `
 * [计支宝App](https://jf-open-prod-1301446188.cos.ap-guangzhou.myqcloud.com/app/appDownload/jizhibao.html)
 * [水羊集团官网](https://www.syounggroup.com/)
 * [石基环企逸云eCloud业务管理平台系统软件V1.0](https://ecloud-test.galasystec.net.cn/#/login)
-* [环企电商平台系统软件V1.0](https://ecloud-test.galasystec.net.cn/pda/#/login)
 * [石基环企-智能收银系统](https://ecloud-test.galasystec.net.cn/pos/#/login)
 * [石基环企逸云eCloud运营管理平台](https://ecloud-test.galasystec.net.cn/platform/#/login)
 * [石基环企自助机售票APP](https://ecloud-test.galasystec.net.cn/tvm/)
+* [石基环企手持PDA售卖](https://ecloud-test.galasystec.net.cn/pda/)
 * 相关APP页面若干
 -----
 个人项目
