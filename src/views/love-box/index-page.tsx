@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import "./index.less";
 
 const LoveBoxPage: FC = () => {
-	const startTime = "2020-05-31 1:35:00";
+	const startTime = "2023-05-31 1:35:00";
 	const [strTimeNode, setStrTimeNode] = useState<JSX.Element>();
 	useEffect(() => {
 		const timer = setInterval(() => {
